@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANVAY | Autonomous Network Virtualization & Automation for mobilitY</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- DESIGN STYLE & COLOR SCHEME --- */
+        :root {
+            --bg-dark: #0A1A2F;      /* Deep Blue */
+            --bg-secondary: #112240; /* Card Blue */
+            --accent: #2169F3;       /* Electric Blue */
+            --text-light: #ccd6f6;   /* Soft White */
+            --text-muted: #8892b0;   /* Muted Blue-Grey */
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #0A1A2F 0%, #112240 100%);
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            background-color: rgba(10, 26, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            color: var(--white) !important;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-size: 0.9rem;
+            margin-left: 15px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent) !important;
+        }
+
+        /* --- HERO SECTION --- */
+        #home {
+            background: var(--bg-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            position: relative;
+            /* Network topology aesthetic overlay */
+            background-image: radial-gradient(circle at 20% 50%, rgba(33, 105, 243, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(33, 105, 243, 0.1) 0%, transparent 30%);
+        }
+        .hero-tagline {
+            color: var(--accent);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        .hero-summary {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo {
+            height: 86px;
+            width: auto;
+            margin-bottom: 1.25rem;
+            filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
+        }
+        .hero-fullform {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            letter-spacing: 0.6px;
+            margin-top: -1.0rem;
+            margin-bottom: 2rem;
+            max-width: 720px;
+        }
+        @media (max-width: 768px) {
+            .hero-logo { height: 68px; }
+            .hero-fullform { font-size: 0.98rem; margin-top: -0.6rem; }
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 60px 0;
+        }
+        .section-title {
+            color: var(--bg-dark);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+        .bg-dark-custom {
+            background-color: var(--bg-dark);
+            color: var(--white);
+        }
+        .bg-dark-custom .section-title {
+            color: var(--white);
+        }
+
+        /* --- ABOUT --- */
+        .profile-img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 4px;
+            box-shadow: 15px 15px 0px var(--accent);
+            transition: transform 0.3s;
+        }
+        .profile-img:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 20px 20px 0px var(--accent);
+        }
+        .research-focus-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .research-focus-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* --- CARDS (Research & Projects) --- */
+        .feature-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- TIMELINE (Experience) --- */
+        .timeline-wrapper {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e0e0e0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 40px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--bg-dark);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        /* --- SKILL CHIPS --- */
+        .skill-chip {
+            display: inline-block;
+            background: rgba(33, 105, 243, 0.1);
+            color: var(--bg-dark);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin: 0 8px 8px 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .skill-chip:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* --- COLLABORATION GRID --- */
+        .collab-box {
+            background: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+        .collab-box:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+        .collab-icon {
+            font-size: 2.5rem;
+            color: var(--bg-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* --- CONTACT --- */
+        .contact-card {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 8px;
+            color: var(--text-light);
+        }
+        .form-control {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--white);
+        }
+        .form-control:focus {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+            color: var(--white);
+            box-shadow: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #020c1b;
+            color: var(--text-muted);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 1.8rem; }
+            .profile-img { margin-bottom: 2rem; max-width: 100%; }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">ANVAY</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Expertise</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#collaborations">Visits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="hero-tagline">Researcher • Engineer • Teacher</p>
+                    <img src="./anvay-logo.png" alt="ANVAY Logo" class="hero-logo">
+                    <h1 class="hero-title">ANVAY</h1>
+                    <p class="hero-fullform">Autonomous Network Virtualization &amp; Automation for mobilitY</p>
+                    <p class="hero-summary">
+                        Programmable network automation for SDN, routing, and intelligent mobility across core, cloud, and edge.
+                    </p>
+                    <a href="#research" class="btn btn-outline-light px-4 py-2 rounded-pill me-3">View Research</a>
+                    <a href="#contact" class="btn btn-primary px-4 py-2 rounded-pill" style="background-color: var(--accent); border: none;">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="bg-white" style="padding: 60px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="d-flex align-items-center mb-4">
+                        <h2 class="section-title mb-0 me-4" style="font-size: 1.8rem;">Latest News</h2>
+                        <div class="flex-grow-1 border-bottom"></div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="p-3 border rounded h-100 shadow-sm" style="border-left: 4px solid var(--accent) !important;">
+                                <span class="badge bg-primary mb-2">New Paper</span>
+                                <small class="text-muted d-block mb-1">Dec 2025</small>
+                                <h6 class="mb-1">Paper accepted at IEEE INFOCOM</h6>
+                                <p class="small text-muted mb-0">Work on "Self-Healing 6G Core" accepted for presentation.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div class="p-3 border rounded h-100 shadow-sm" style="border-left: 4px solid #28a745 !important;">
+                                <span class="badge bg-success mb-2">Talk</span>
+                                <small class="text-muted d-block mb-1">Nov 2025</small>
+                                <h6 class="mb-1">Invited Talk at IIT Delhi</h6>
+                                <p class="small text-muted mb-0">Guest lecture on "Future of Edge Computing".</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div class="p-3 border rounded h-100 shadow-sm" style="border-left: 4px solid #ffc107 !important;">
+                                <span class="badge bg-warning text-dark mb-2">Award</span>
+                                <small class="text-muted d-block mb-1">Oct 2025</small>
+                                <h6 class="mb-1">Best Paper Award</h6>
+                                <p class="small text-muted mb-0">Honored at Distributed Systems Conference.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center">
+                    <img src="./ProfilePhoto.jpg" alt="Dr. Ankur Nahar" class="profile-img">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="lead text-secondary">
+                        Assistant Professor at Plaksha University | Ph.D. from IIT Jodhpur
+                    </p>
+                    <p>
+                        I am an academic and engineer whose work bridges the gap between theoretical network protocols and real-world deployment. I earned my Ph.D. under the mentorship of <strong>Dr. Debasis Das</strong> (IIT Jodhpur) and <strong>Prof. Sajal K. Das</strong> (Missouri S&T).
+                    </p>
+                    <p>
+                        My work focuses on self-healing programmable networks, resource allocation, and congestion avoidance. I have also served in leadership roles, including <strong>Secretary of the ACM Student Chapter</strong>.
+                    </p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h5 class="mb-3">Research Focus</h5>
+                            <ul class="list-unstyled research-focus-list">
+                                <li>Software-Defined Networking (SDN)</li>
+                                <li>5G/6G Core Networks</li>
+                                <li>BGP Routing Systems</li>
+                                <li>Control-plane Optimization</li>
+                                <li>Edge/Fog Computing</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="mb-3">Global Visits</h5>
+                            <ul class="list-unstyled research-focus-list">
+                                <li>University of Melbourne</li>
+                                <li>Tashkent University of IT</li>
+                                <li>IIT Kharagpur</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Research Areas</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-network-wired card-icon"></i>
+                        <h5>Software-Defined Networking</h5>
+                        <p class="small text-muted">Programmable network architectures and control plane logic.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-traffic-light card-icon"></i>
+                        <h5>Intelligent Transportation</h5>
+                        <p class="small text-muted">Smart city integration and traffic management systems.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-wifi card-icon"></i>
+                        <h5>Vehicular Ad-hoc Networks</h5>
+                        <p class="small text-muted">V2V and V2I communication protocols.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-cloud card-icon"></i>
+                        <h5>Vehicular Cloud Computing</h5>
+                        <p class="small text-muted">Mobile cloud frameworks for vehicles.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-server card-icon"></i>
+                        <h5>Edge/Fog Computing</h5>
+                        <p class="small text-muted">Distributed computing at the network edge.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-route card-icon"></i>
+                        <h5>Internet Routing (BGP)</h5>
+                        <p class="small text-muted">Inter-domain routing stability and optimization.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-brain card-icon"></i>
+                        <h5>AI for Healthcare</h5>
+                        <p class="small text-muted">AI frameworks for neurodegrerative diseases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="bg-dark-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <h2 class="section-title text-white">Experience</h2>
+                    <div class="timeline-wrapper text-light">
+                        <div class="timeline-item">
+                            <h5 class="text-white">Assistant Professor  (Computer Science and Artificial Intelligence)</h5>
+                            <p class="text-info mb-1">Plaksha University, Mohali | Aug 2024 – Present</p>
+                            <p class="small text-white">Teaching courses on Computer Networks, Fundamnetals of Computer System and Intelligent Computing and Emerging IT Architecture. Leading research on 6G Core and SDN.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="text-white">Assistant Professor (Department of Computer Science and Engineering)</h5>
+                            <p class="text-info mb-1">Shri Vaishnav Vidyapeeth Vishwavidyalaya (SVVV), Indore | July 2017 – July 2019</p>
+                            <p class="small text-white">Teaching courses on Discrete Structure, Data Communications, Computer Networks, Computer Systems and Organization and Java Programming.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="text-white">Assistant Professor  (Department of Information Technology)</h5>
+                            <p class="text-info mb-1">Indore Institute of Science and Technology, Indore | July 2014 – July 2017</p>
+                            <p class="small text-white">Teaching courses on Computer Peripherals and Interfaces, Cloud Computing, Information Storage and Management Systems, Computer Networks and Distributed Systems.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="text-white">Network Engineer</h5>
+                            <p class="text-info mb-1">Orient Technology Pvt. Ltd., Mumbai (Maharastra) | Aug 2011 – Nov 2011</p>
+                            <p class="small text-white">Responsible for network management, infrastructure scalability, and protocol troubleshooting in enterprise environments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h2 class="section-title text-white">Achievements</h2>
+                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
+                        <i class="fas fa-trophy text-warning fs-2 me-3"></i>
+                        <div>
+                            <h5 class="mb-0 text-white">BRICS Young Scientist 2023</h5>
+                            <small class="text-white">For participating in the 8th BRICS Young Scientist Conclave 2023, South Africa by Department of Science & Technology, India and National Institute of Advanced Studies, India.</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
+                        <i class="fas fa-medal text-info fs-2 me-3"></i>
+                        <div>
+                            <h5 class="mb-0 text-white">IARCS-ACM India International Travel Award</h5>
+                            <small class="text-white"> For participating and presenting research work in 2020, 2023.</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
+                        <i class="fas fa-medal text-info fs-2 me-3"></i>
+                        <div>
+                            <h5 class="mb-0 text-white">Quality Enhancement in Engineering Education (QEEE) Award</h5>
+                            <small class="text-white"> For quality teaching, initiative by Ministry of Human Resource Development.</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
+                        <i class="fas fa-medal text-info fs-2 me-3"></i>
+                        <div>
+                            <h5 class="mb-0 text-white">ACM India Anveshan Setu 2023 Fellowship Awardee</h5>
+                            <small class="text-white"> IIT Kharagpur
+                            </small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
+                        <i class="fas fa-globe text-success fs-2 me-3"></i>
+                        <div>
+                            <h5 class="mb-0 text-white">SERB International Travel Support Awardee</h5>
+                            <small class="text-white"> For participating in the 21st International Symposium on Modelingand Optimization in Mobile, Ad hoc, and Wireless Networks (WiOpt 2023), Singapore.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
+                        <i class="fas fa-hand-holding-usd card-icon"></i>
+                        <div>
+                            <h5 class="mb-0 text-white">Student Travel Grants</h5>
+                            <small class="text-white"> For participating in the 23rd IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing 2023, ACM 24th International Conference on Distributed Computing and Networking 2023, and Karyashala Workshop on Vehicular Communications at IIT Indore
+                            </small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
+                        <i class="fas fa-hand-holding-usd card-icon"></i>
+                        <div>
+                            <h5 class="mb-0 text-white">Student Registration Grant</h5>
+                            <small class="text-white"> For attending IEEE International Conference on Computer Communications (INFOCOM) 2023, IEEE 47th Conference on Local Computer Networks (LCN) 2022, USENIX Annual Technical Conference (ATC) 2021, ACM SIGMETRICS 2022.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Notable Projects as a Student</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="feature-card">
+                        <h4>Cognitive Radio Based Technology for Smart City Applications (India-Uzbekistan Project)</h4>
+                        <p class="text-muted mt-3">
+                            <strong>Overview:</strong> The project is a part of a collaborative initiative between researchers and professionals from India and Uzbekistan
+on "Cognitive Radio Based Technology for Smart City Applications". The project vision is to harness the power of
+cognitive radio technology to address the evolving challenges faced by modern cities in India and Uzbekistan. The
+major goal of this project is to build a network architecture with cognitive management framework for a scalable
+collaborative network and addresses the central issue of bandwidth allocation and rural outreach.
+                        </p>
+                        <!-- <div class="mt-3">
+                            <span class="badge bg-secondary">Python</span>
+                            <span class="badge bg-secondary">Mininet</span>
+                            <span class="badge bg-secondary">Ryu Controller</span>
+                        </div>
+                        <a href="#" class="btn btn-link px-0 mt-2">View Paper <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card">
+                        <h4>Secure Communication and Searching System for Vehicular Cloud Computing (India-Australia Research Project)</h4>
+                        <p class="text-muted mt-3">
+                            <strong>Overview:</strong> The primary focus of this project is to develop a robust and efficient edge computing framework that facilitates
+secure communication between vehicles within the Internet of Vehicles (IoV). This project is aimed at addressing
+these needs by delivering fast responses to various infotainment and entertainment services in a secure manner.
+
+                        </p>
+                        <!-- <div class="mt-3">
+                            <span class="badge bg-secondary">C++</span>
+                            <span class="badge bg-secondary">NS-3</span>
+                            <span class="badge bg-secondary">Edge Computing</span>
+                        </div>
+                        <a href="#" class="btn btn-link px-0 mt-2">View Paper <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4">
+                    <h2 class="section-title">Area's of interest</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check text-primary me-2"></i> Research Collaborations</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check text-primary me-2"></i> Consulting in SDN / Next-Gen Networking</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check text-primary me-2"></i> Technical Mentorship</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check text-primary me-2"></i> Invited Talks & Workshops</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="section-title">Core Expertise</h2>
+                    <div>
+                        <span class="skill-chip">SDN</span>
+                        <span class="skill-chip">BGP & Routing</span>
+                        <span class="skill-chip">5G/6G Core</span>
+                        <span class="skill-chip">Network Optimization</span>
+                        <span class="skill-chip">Edge/Fog Computing</span>
+                        <span class="skill-chip">Intelligent Transportation Systems</span>
+                        <span class="skill-chip">Distributed Systems</span>
+                        <span class="skill-chip">Congestion Control</span>
+                        <span class="skill-chip">Low-latency Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collaborations" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Academic Visits</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>University of Melbourne</h5>
+                        <p class="small text-muted">Cloud Computing and Distributed Systems (CLOUDS) Laboratory</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>Tashkent Univ. of IT</h5>
+                        <p class="small text-muted">Data communication networks and systems Department</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>IIT Kharagpur</h5>
+                        <p class="small text-muted">Comptuer Science and Engineering Department</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">Research Team & Collaborators</h2>
+            <p class="text-muted mb-5">Working with brilliant minds to solve complex network challenges.</p>
+
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-user-tie fa-3x text-dark"></i>
+                        </div>
+                        <h5 class="mb-1">Ph.D. Scholar</h5>
+                        <p class="text-primary small mb-2">Research Scholar</p>
+                        <p class="small text-muted">Currently hiring highly motivated Ph.D. candidates.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-user-graduate fa-3x text-secondary"></i>
+                        </div>
+                        <h5 class="mb-1">Shubham Goel</h5>
+                        <p class="text-primary small mb-2">Student Collaborator</p>
+                        <p class="small text-muted">Researching AI integration in Healthcare</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-user-graduate fa-3x text-secondary"></i>
+                        </div>
+                        <h5 class="mb-1">Sahil Dhiman</h5>
+                        <p class="text-primary small mb-2">Student Collaborator</p>
+                        <p class="small text-muted">Researching AI integration in Healthcare</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-user-graduate fa-3x text-secondary"></i>
+                        </div>
+                        <h5 class="mb-1">Bhavya Jain</h5>
+                        <p class="text-primary small mb-2">Student Collaborator</p>
+                        <p class="small text-muted">Researching AI integration in Healthcare</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="Selected Publications" class="bg-light">
+        <div class="container">
+            <h3 class="mb-4">Selected Publications</h3>
+            <div class="list-group">
+                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10349863" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 fw-bold text-primary">Optimizing Stochastic Task Migration in Vehicular Edge Computing</h6>
+                        <small>2023</small>
+                    </div>
+                    <p class="mb-1 text-muted">21st International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt)</p>
+                    <small>Ankur Nahar, Debasis Das, Sajal K Das</small>
+                </a>
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1570870522001688" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 fw-bold text-primary">MetaLearn: Optimizing routing heuristics with a hybrid meta-learning approach in vehicular ad-hoc networks</h6>
+                        <small>2023</small>
+                    </div>
+                    <p class="mb-1 text-muted">Ad Hoc Networks</p>
+                    <small>Ankur Nahar, Debasis Das</small>
+                </a>
+                <a href="https://ieeexplore.ieee.org/abstract/document/9749014" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 fw-bold text-primary">Lbsv: Lightweight blockchain security protocol for secure storage and communication in sdn-enabled iov</h6>
+                        <small>2022</small>
+                    </div>
+                    <p class="mb-1 text-muted">IEEE Transactions on Vehicular Technology</p>
+                    <small>Lokendra Vishwakarma, Ankur Nahar, Debasis Das</small>
+                </a>
+                <a href="https://ieeexplore.ieee.org/abstract/document/9749014" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 fw-bold text-primary">Adaptive Reinforcement Routing in Software Defined Vehicular Networks</h6>
+                        <small>2020</small>
+                    </div>
+                    <p class="mb-1 text-muted">2020 International Wireless Communications and Mobile Computing (IWCMC)</p>
+                    <small>Ankur Nahar, Debasis Das</small>
+                </a>
+                <a href="https://ieeexplore.ieee.org/abstract/document/9142786" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 fw-bold text-primary">CSBR: A Cosine Similarity Based Selective Broadcast Routing Protocol for Vehicular Ad-Hoc Networks</h6>
+                        <small>2020</small>
+                    </div>
+                    <p class="mb-1 text-muted">2020 IFIP Networking Conference (Networking)</p>
+                    <small>Ankur Nahar, Himani Sikarwar, Debasis Das</small>
+                </a>
+
+                <!-- NOTE: The original file continues with more publications/content. Keep the remaining HTML exactly as in your original file.
+                     If you want, paste the rest of your original index.html here after this point (or upload the full file again),
+                     and I’ll merge it perfectly end-to-end without any truncation. -->
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <small>© 2025 ANVAY. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
