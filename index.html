@@ -282,6 +282,49 @@
   				transition: transform 0.2s ease;
 					}
 
+		/* --- ACHIEVEMENTS SCROLLER --- */
+.achievements-scroll-panel {
+    max-height: 620px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.achievements-scroll-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.achievements-scroll-panel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.achievements-scroll-panel::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.achievements-scroll-panel {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) rgba(255, 255, 255, 0.08);
+}
+
+.achievement-box {
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.achievement-box:hover {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+@media (max-width: 991px) {
+    .achievements-scroll-panel {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+}
+
 		/* --- LATEST NEWS SLIDER --- */
 .news-carousel {
     position: relative;
@@ -587,63 +630,93 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <h2 class="section-title text-white">Achievements</h2>
-                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
-                        <i class="fas fa-trophy text-warning fs-2 me-3"></i>
-                        <div>
-                            <h5 class="mb-0 text-white">BRICS Young Scientist 2023</h5>
-                            <small class="text-white">For participating in the 8th BRICS Young Scientist Conclave 2023, South Africa by Department of Science & Technology, India and National Institute of Advanced Studies, India.</small>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
-                        <i class="fas fa-medal text-info fs-2 me-3"></i>
-                        <div>
-                            <h5 class="mb-0 text-white">IARCS-ACM India International Travel Award</h5>
-                            <small class="text-white"> For participating and presenting research work in 2020, 2023.</small>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
-                        <i class="fas fa-medal text-info fs-2 me-3"></i>
-                        <div>
-                            <h5 class="mb-0 text-white">Quality Enhancement in Engineering Education (QEEE) Award</h5>
-                            <small class="text-white"> For quality teaching, initiative by Ministry of Human Resource Development.</small>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
-                        <i class="fas fa-medal text-info fs-2 me-3"></i>
-                        <div>
-                            <h5 class="mb-0 text-white">ACM India Anveshan Setu 2023 Fellowship Awardee</h5>
-                            <small class="text-white"> IIT Kharagpur
-                            </small>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
-                        <i class="fas fa-globe text-success fs-2 me-3"></i>
-                        <div>
-                            <h5 class="mb-0 text-white">SERB International Travel Support Awardee</h5>
-                            <small class="text-white"> For participating in the 21st International Symposium on Modelingand Optimization in Mobile, Ad hoc, and Wireless Networks (WiOpt 2023), Singapore.
-                            </small>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
-                        <i class="fas fa-hand-holding-usd card-icon"></i>
-                        <div>
-                            <h5 class="mb-0 text-white">Student Travel Grants</h5>
-                            <small class="text-white"> For participating in the 23rd IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing 2023, ACM 24th International Conference on Distributed Computing and Networking 2023, and Karyashala Workshop on Vehicular Communications at IIT Indore
-                            </small>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded">
-                        <i class="fas fa-hand-holding-usd card-icon"></i>
-                        <div>
-                            <h5 class="mb-0 text-white">Student Registration Grant</h5>
-                            <small class="text-white"> For attending IEEE International Conference on Computer Communications (INFOCOM) 2023, IEEE 47th Conference on Local Computer Networks (LCN) 2022, USENIX Annual Technical Conference (ATC) 2021, ACM SIGMETRICS 2022.
-                            </small>
-                        </div>
-                    </div>
-                </div>
+    <h2 class="section-title text-white">Achievements</h2>
+
+    <div class="achievements-scroll-panel">
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-award text-warning fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">ANRF PM-ECRG Grant Awardee</h5>
+                <small class="text-white">
+                    Awarded the ANRF Prime Minister Early Career Research Grant PM-ECRG of ₹65 lakhs for the project 
+                    “TRIVENI-ITS: Traffic-Responsive Infrastructure for Visually-Impaired Enablement at Intersections.”
+                </small>
             </div>
         </div>
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-trophy text-warning fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">BRICS Young Scientist 2023</h5>
+                <small class="text-white">
+                    Participated in the 8th BRICS Young Scientist Conclave 2023, South Africa, supported by the Department of Science & Technology, India and the National Institute of Advanced Studies, India.
+                </small>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-medal text-info fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">IARCS-ACM India International Travel Award</h5>
+                <small class="text-white">
+                    Received international travel support for presenting research work in 2020 and 2023.
+                </small>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-medal text-info fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">Quality Enhancement in Engineering Education Award</h5>
+                <small class="text-white">
+                    Recognized for quality teaching under the Quality Enhancement in Engineering Education initiative by the Ministry of Human Resource Development.
+                </small>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-medal text-info fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">ACM India Anveshan Setu 2023 Fellowship Awardee</h5>
+                <small class="text-white">
+                    Selected as an ACM India Anveshan Setu 2023 Fellowship Awardee at IIT Kharagpur.
+                </small>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-globe text-success fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">SERB International Travel Support Awardee</h5>
+                <small class="text-white">
+                    Received support for participating in the 21st International Symposium on Modeling and Optimization in Mobile, Ad hoc, and Wireless Networks, WiOpt 2023, Singapore.
+                </small>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-hand-holding-usd text-primary fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">Student Travel Grants</h5>
+                <small class="text-white">
+                    Received travel support for participating in CCGrid 2023, ICDCN 2023, and the Karyashala Workshop on Vehicular Communications at IIT Indore.
+                </small>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-4 bg-secondary bg-opacity-25 p-3 rounded achievement-box">
+            <i class="fas fa-hand-holding-usd text-primary fs-2 me-3"></i>
+            <div>
+                <h5 class="mb-0 text-white">Student Registration Grant</h5>
+                <small class="text-white">
+                    Received student registration support for IEEE INFOCOM 2023, IEEE LCN 2022, USENIX ATC 2021, and ACM SIGMETRICS 2022.
+                </small>
+            </div>
+        </div>
+
+    </div>
+</div>
     </section>
 
 
