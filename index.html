@@ -49,11 +49,11 @@
 
         .nav-link {
             color: var(--text-muted) !important;
-            font-size: 0.9rem;
-            margin-left: 15px;
+            font-size: 0.82rem;
+            margin-left: 9px;
             transition: color 0.3s;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.45px;
         }
 
         .nav-link:hover,
@@ -211,6 +211,52 @@
             display: block;
         }
 
+        /* --- HERO OPPORTUNITY STRIP --- */
+        .hero-opportunity-strip {
+            margin-top: 1.4rem;
+            max-width: 760px;
+            background: rgba(17, 34, 64, 0.78);
+            border: 1px solid rgba(204, 214, 246, 0.15);
+            border-left: 4px solid var(--accent);
+            border-radius: 16px;
+            padding: 1rem 1.1rem;
+            color: var(--text-light);
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
+        }
+
+        .hero-opportunity-strip i {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-top: 3px;
+        }
+
+        .hero-opportunity-strip strong {
+            display: block;
+            font-size: 0.95rem;
+            line-height: 1.45;
+            color: var(--white);
+        }
+
+        .hero-opportunity-strip small {
+            display: block;
+            margin-top: 0.35rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .hero-opportunity-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+        }
+
+        .hero-opportunity-link:hover {
+            color: var(--white);
+        }
+
         @media (max-width: 991px) {
             #home {
                 padding-top: 110px;
@@ -233,7 +279,7 @@
             }
 
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 1.55rem;
             }
         }
 
@@ -389,46 +435,6 @@
             }
         }
 
-        /* --- COLLABORATION GRID --- */
-        .collab-box {
-            background: var(--white);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: 0.3s;
-        }
-
-        .collab-box:hover {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            border-color: var(--accent);
-        }
-
-        .collab-icon {
-            font-size: 2.5rem;
-            color: var(--bg-dark);
-            margin-bottom: 1rem;
-        }
-
-        /* --- TEAM --- */
-        .team-photo {
-            width: 110px;
-            height: 110px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid #e9ecef;
-        }
-
-        .feature-card:hover .team-photo {
-            transform: scale(1.03);
-            transition: transform 0.2s ease;
-        }
-
         /* --- LATEST NEWS SLIDER --- */
         .news-carousel {
             position: relative;
@@ -562,6 +568,145 @@
             }
         }
 
+        /* --- JOIN ANVAY LAB --- */
+        .join-card {
+            background: var(--white);
+            border: 1px solid #e6ebf2;
+            border-radius: 16px;
+            padding: 1.6rem;
+            box-shadow: 0 14px 32px rgba(10, 26, 47, 0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .join-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 22px 44px rgba(10, 26, 47, 0.12);
+        }
+
+        .join-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(33, 105, 243, 0.12);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .join-card h5 {
+            color: var(--bg-dark);
+            margin-bottom: 0.65rem;
+        }
+
+        .join-card p {
+            color: #5d667a;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin-bottom: 0;
+        }
+
+        .join-focus-line {
+            background: rgba(33, 105, 243, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            color: #4b5568;
+            line-height: 1.6;
+        }
+
+        .join-focus-line strong {
+            color: var(--bg-dark);
+        }
+
+        /* --- COLLABORATION GRID --- */
+        .collab-box {
+            background: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .collab-box:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .collab-icon {
+            font-size: 2.5rem;
+            color: var(--bg-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* --- TEAM --- */
+        .team-photo {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #e9ecef;
+        }
+
+        .feature-card:hover .team-photo {
+            transform: scale(1.03);
+            transition: transform 0.2s ease;
+        }
+
+        /* --- PUBLICATIONS SCROLLER --- */
+        .publications-scroll-panel {
+            max-height: 720px;
+            overflow-y: auto;
+            padding-right: 12px;
+        }
+
+        .publications-scroll-panel::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        .publications-scroll-panel::-webkit-scrollbar-track {
+            background: #e9eef6;
+            border-radius: 10px;
+        }
+
+        .publications-scroll-panel::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        .publications-scroll-panel {
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) #e9eef6;
+        }
+
+        .publications-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .publications-scroll-panel {
+                max-height: 620px;
+            }
+
+            .publications-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         /* --- CONTACT --- */
         .contact-card {
             background: var(--bg-secondary);
@@ -609,9 +754,10 @@
                     <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#join">Join Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#collaborations">Collaborators</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="#Publications">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -645,6 +791,20 @@
                     <div class="hero-cta">
                         <a href="#about" class="btn btn-outline-light px-4 py-2 rounded-pill me-3">About Group Lead</a>
                         <a href="#news" class="btn btn-primary px-4 py-2 rounded-pill" style="background-color: var(--accent); border: none;">Latest Updates</a>
+                    </div>
+
+                    <div class="hero-opportunity-strip">
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-user-graduate me-3"></i>
+                            <div>
+                                <strong>We are looking for motivated Ph.D. students, research interns, and research fellows.</strong>
+                                <small>
+                                    Open areas include Intelligent Transportation Systems, Software-Defined Networking, 
+                                    Internet of Vehicles, Edge Computing, Blockchain, and secure networked systems.
+                                </small>
+                            </div>
+                        </div>
+                        <a href="#join" class="hero-opportunity-link">Explore Opportunities</a>
                     </div>
                 </div>
 
@@ -696,7 +856,7 @@
                             </span>
 
                             <span class="research-chip-hero">
-                                <i class="fas fa-brain"></i> AI for Healthcare
+                                <i class="fas fa-brain"></i> AI for Healthcare Applications
                             </span>
 
                         </div>
@@ -902,132 +1062,6 @@
         </div>
     </section>
 
-    <!-- COLLABORATIONS -->
-    <section id="collaborations" class="bg-light compact-section">
-        <div class="container">
-            <h2 class="section-title">Collaborators</h2>
-
-            <div class="row g-4">
-
-                <div class="col-md-4">
-                    <div class="collab-box">
-                        <i class="fas fa-university collab-icon"></i>
-                        <h5>Dr. Debasis Das</h5>
-                        <p class="small text-muted">VANET Lab, Indian Institute of Technology Jodhpur, India</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="collab-box">
-                        <i class="fas fa-university collab-icon"></i>
-                        <h5>Prof. Sajal K. Das</h5>
-                        <p class="small text-muted">Daniel St. Clair Endowed Chair Professor, Missouri University of Science and Technology, USA</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="collab-box">
-                        <i class="fas fa-university collab-icon"></i>
-                        <h5>Prof. Rajkumar Buyya</h5>
-                        <p class="small text-muted">Cloud Computing and Distributed Systems Laboratory, University of Melbourne, Australia</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="collab-box">
-                        <i class="fas fa-university collab-icon"></i>
-                        <h5>Dr. Ernazar Reypnazarov and Dr. Doston Khasanov</h5>
-                        <p class="small text-muted">Tashkent University of Information Technologies, Uzbekistan</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="collab-box">
-                        <i class="fas fa-university collab-icon"></i>
-                        <h5>Dr. Himani Sikarwar</h5>
-                        <p class="small text-muted">Computer Science and Engineering Department, Shiv Nadar IoE, Greater Noida, India</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="collab-box">
-                        <i class="fas fa-university collab-icon"></i>
-                        <h5>Dr. Lokendra Vishwakarma</h5>
-                        <p class="small text-muted">Computing and Data Sciences, FLAME University, Pune, India</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- TEAM -->
-    <section id="team" class="bg-white compact-section">
-        <div class="container">
-            <h2 class="section-title">Research Team</h2>
-            <p class="text-muted mb-5">Working with brilliant minds to solve complex network challenges.</p>
-
-            <div class="row g-4 justify-content-center">
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-card text-center p-4">
-                        <div class="mb-3">
-                            <img src="Gowher-Parry.jpg" alt="Mr. Gowher Parry" class="team-photo">
-                        </div>
-                        <h5 class="mb-1">Mr. Gowher Parry</h5>
-                        <p class="text-primary small mb-2">Ph.D. Research Scholar</p>
-                        <p class="small text-muted">IoV and Blockchain</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-card text-center p-4">
-                        <div class="mb-3">
-                            <img src="shubham-goel.png" alt="Shubham Goel" class="team-photo">
-                        </div>
-                        <h5 class="mb-1">Mr. Shubham Goel</h5>
-                        <p class="text-primary small mb-2">Student Collaborator</p>
-                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-card text-center p-4">
-                        <div class="mb-3">
-                            <img src="sahil-dhiman.jpg" alt="Sahil Dhiman" class="team-photo">
-                        </div>
-                        <h5 class="mb-1">Mr. Sahil Dhiman</h5>
-                        <p class="text-primary small mb-2">Student Collaborator</p>
-                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-card text-center p-4">
-                        <div class="mb-3">
-                            <img src="bhavya-jain.png" alt="Bhavya Jain" class="team-photo">
-                        </div>
-                        <h5 class="mb-1">Mr. Bhavya Jain</h5>
-                        <p class="text-primary small mb-2">Student Collaborator</p>
-                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-card text-center p-4">
-                        <div class="mb-3">
-                            <img src="aarju-dixit.jpg" alt="Aarju Dixit" class="team-photo">
-                        </div>
-                        <h5 class="mb-1">Ms. Aarju Dixit</h5>
-                        <p class="text-primary small mb-2">Research Collaborator, IIT Jodhpur</p>
-                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- NEWS -->
     <section id="news" class="bg-white compact-section news-section" style="padding: 60px 0;">
         <div class="container">
@@ -1159,217 +1193,424 @@
         </div>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="Publications" class="bg-light compact-section">
+    <!-- JOIN ANVAY LAB -->
+    <section id="join" class="bg-light compact-section">
         <div class="container">
-            <h3 class="mb-4">Selected Publications</h3>
-
-            <div class="list-group">
-
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1570870526000247" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">qIoV: A Quantum-Driven Internet-of-Vehicles-Based Approach for Environmental Monitoring and Rapid Response Systems</h6>
-                        <small>2026</small>
-                    </div>
-                    <p class="mb-1 text-muted">Ad Hoc Networks</p>
-                    <small>Ankur Nahar, Koustav Kumar Mondal, Debasis Das, Rajkumar Buyya</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/11018478/" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">MRMH: Multi-Constraint Routing Optimization Using Hybrid Metaheuristics in Vehicular Ad-Hoc Networks</h6>
-                        <small>2025</small>
-                    </div>
-                    <p class="mb-1 text-muted">IEEE Transactions on Network Science and Engineering</p>
-                    <small>Ankur Nahar, Himani Sikarwar, Debasis Das, Sudip Misra</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/10571385/" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">Clouds on the Road: A Software-Defined Fog Computing Framework for Intelligent Resource Management in Vehicular Ad-Hoc Networks</h6>
-                        <small>2024</small>
-                    </div>
-                    <p class="mb-1 text-muted">IEEE Transactions on Mobile Computing</p>
-                    <small>Ankur Nahar, Koustav Kumar Mondal, Debasis Das, Rajkumar Buyya</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/10810742" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">A Hypergraph Approach to Deep Learning Based Routing in Software-Defined Vehicular Networks</h6>
-                        <small>2024</small>
-                    </div>
-                    <p class="mb-1 text-muted">IEEE Transactions on Mobile Computing</p>
-                    <small>Ankur Nahar, Nishit Bhardwaj, Debasis Das, Sajal K Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/11203265" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">DyBatch: Message Prioritization and Priority-driven Dynamic Batch Verification in Large-scale IoV Networks</h6>
-                        <small>2025</small>
-                    </div>
-                    <p class="mb-1 text-muted">IEEE Transactions on Vehicular Technology</p>
-                    <small>Himani Sikarwar, Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1570870525001222" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">Meta-enhanced hierarchical multi-agent reinforcement learning for dynamic spectrum management and trust-based routing in cognitive vehicular networks</h6>
-                        <small>2025</small>
-                    </div>
-                    <p class="mb-1 text-muted">IEEE Transactions on Network Science and Engineering</p>
-                    <small>Ankur Nahar, Debasis Das, Ramnarayan Yadav, Khujamatov Halimjon, Ernazar Reypnazarov</small>
-                </a>
-
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1570870522001688" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">MetaLearn: Optimizing Routing Heuristics with a Hybrid Meta-Learning Approach in Vehicular Ad-hoc Networks</h6>
-                        <small>2023</small>
-                    </div>
-                    <p class="mb-1 text-muted">Ad Hoc Networks</p>
-                    <small>Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9749014" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">Lbsv: Lightweight Blockchain Security Protocol for Secure Storage and Communication in SDN-enabled IoV</h6>
-                        <small>2022</small>
-                    </div>
-                    <p class="mb-1 text-muted">IEEE Transactions on Vehicular Technology</p>
-                    <small>Lokendra Vishwakarma, Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://link.springer.com/article/10.1007/s11277-023-10726-4" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">SDCast: A Software-Defined Networking Based Clustered Routing Protocol for Vehicular Ad-Hoc Networks</h6>
-                        <small>2023</small>
-                    </div>
-                    <p class="mb-1 text-muted">Wireless Personal Communications</p>
-                    <small>Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10349863" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">Optimizing Stochastic Task Migration in Vehicular Edge Computing</h6>
-                        <small>2023</small>
-                    </div>
-                    <p class="mb-1 text-muted">21st International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks</p>
-                    <small>Ankur Nahar, Debasis Das, Sajal K Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9749014" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">Adaptive Reinforcement Routing in Software Defined Vehicular Networks</h6>
-                        <small>2020</small>
-                    </div>
-                    <p class="mb-1 text-muted">2020 International Wireless Communications and Mobile Computing</p>
-                    <small>Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9142786" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">CSBR: A Cosine Similarity Based Selective Broadcast Routing Protocol for Vehicular Ad-Hoc Networks</h6>
-                        <small>2020</small>
-                    </div>
-                    <p class="mb-1 text-muted">2020 IFIP Networking Conference</p>
-                    <small>Ankur Nahar, Himani Sikarwar, Debasis Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9306690" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">SeScR: SDN-Enabled Spectral Clustering-Based Optimized Routing Using Deep Learning in VANET Environment</h6>
-                        <small>2020</small>
-                    </div>
-                    <p class="mb-1 text-muted">2020 IEEE 19th International Symposium on Network Computing and Applications</p>
-                    <small>Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9129180" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">LABVS: Lightweight Authentication and Batch Verification Scheme for Universal Internet of Vehicles</h6>
-                        <small>2020</small>
-                    </div>
-                    <p class="mb-1 text-muted">2020 IEEE 91st Vehicular Technology Conference</p>
-                    <small>Himani Sikarwar, Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://dl.acm.org/doi/abs/10.1145/3416010.3423218" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">OBQR: Orientation-Based Source QoS Routing in VANETs</h6>
-                        <small>2020</small>
-                    </div>
-                    <p class="mb-1 text-muted">Proceedings of the 23rd International ACM Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</p>
-                    <small>Ankur Nahar, Debasis Das, Sajal K Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9860386" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">MetoidS: Hybrid K-Medoids-Meta Heuristic Clustering-Based Routing Optimization in Vehicular Ad-Hoc Networks</h6>
-                        <small>2022</small>
-                    </div>
-                    <p class="mb-1 text-muted">2022 IEEE 95th Vehicular Technology Conference</p>
-                    <small>Ankur Nahar, Lokendra Vishwakarma, Debasis Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/10570523" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">RF-CVN: Recurrent Reinforcement Learning Framework for Cognitive Vehicular Ad-Hoc Networks Routing</h6>
-                        <small>2024</small>
-                    </div>
-                    <p class="mb-1 text-muted">2024 IEEE Wireless Communications and Networking Conference</p>
-                    <small>Ankur Nahar, Debasis Das, Ramnarayan Yadav, Khalim Khujamatov, Ernazar Reypnazarov</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/10171470" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">CacheIn: A Secure Distributed Multi-layer Mobility-Assisted Edge Intelligence Based Caching for Internet of Vehicles</h6>
-                        <small>2023</small>
-                    </div>
-                    <p class="mb-1 text-muted">2023 IEEE/ACM 23rd International Symposium on Cluster, Cloud and Internet Computing</p>
-                    <small>Ankur Nahar, Himani Sikarwar, Sanyam Jain, Debasis Das</small>
-                </a>
-
-                <a href="https://dl.acm.org/doi/abs/10.1145/3571306.3571410" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">SpTFrame: A Framework for Spatio-Temporal Information Aware Message Dissemination in Software Defined Vehicular Networks</h6>
-                        <small>2023</small>
-                    </div>
-                    <p class="mb-1 text-muted">Proceedings of the 24th International Conference on Distributed Computing and Networking</p>
-                    <small>Ankur Nahar, Debasis Das, Sajal K Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9824872/" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">LAAS: Lightweight Anonymous Authentication Scheme for Universal Internet of Vehicles</h6>
-                        <small>2022</small>
-                    </div>
-                    <p class="mb-1 text-muted">2022 International Wireless Communications and Mobile Computing</p>
-                    <small>Himani Sikarwar, Ankur Nahar, Debasis Das</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/10572061" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">Design and Implementation of an Active Safety System for Vehicular Ad-Hoc Networks</h6>
-                        <small>2024</small>
-                    </div>
-                    <p class="mb-1 text-muted">2024 International Conference on Information Networking</p>
-                    <small>Halimjon Hujamatov, Debasis Das, Amir Lazarev, Ernazar Reypnazarov, Doston Khasaniv, Ankur Nahar</small>
-                </a>
-
-                <a href="https://ieeexplore.ieee.org/abstract/document/9843737" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold text-primary">AlcFier: Adaptive Self-Learning Classifier for Routing in Vehicular Ad-Hoc Network</h6>
-                        <small>2022</small>
-                    </div>
-                    <p class="mb-1 text-muted">2022 IEEE 47th Conference on Local Computer Networks</p>
-                    <small>Ankur Nahar, Himani Sikarwar, Debasis Das</small>
-                </a>
-
-                <div class="mt-3">
-                    <a href="https://scholar.google.com/citations?user=KJfw2-kAAAAJ&hl=en" class="btn btn-sm btn-outline-dark">
-                        View Google Scholar Profile <i class="fas fa-external-link-alt ms-1"></i>
-                    </a>
+            <div class="row align-items-center mb-4">
+                <div class="col-lg-8">
+                    <h2 class="section-title">Join ANVAY Lab</h2>
+                    <p class="text-muted mt-3 mb-0">
+                        We welcome highly motivated students and researchers interested in building intelligent, 
+                        programmable, and trustworthy mobility and networked systems.
+                    </p>
                 </div>
 
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="mailto:ankur.nahar@plaksha.edu.in?subject=Research Opportunity at ANVAY Lab" 
+                       class="btn btn-primary px-4 py-2 rounded-pill" 
+                       style="background-color: var(--accent); border: none;">
+                        Contact for Opportunities
+                    </a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="join-card h-100">
+                        <div class="join-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h5>Ph.D. Students</h5>
+                        <p>
+                            Suitable for candidates interested in long-term research on Intelligent Transportation Systems, 
+                            Software-Defined Networking, Internet of Vehicles, edge intelligence, and secure mobility systems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="join-card h-100">
+                        <div class="join-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h5>Research Interns</h5>
+                        <p>
+                            Open for undergraduate and postgraduate students who want to gain hands-on research experience 
+                            through simulations, prototyping, experimentation, and publication-oriented work.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="join-card h-100">
+                        <div class="join-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h5>Research Fellows</h5>
+                        <p>
+                            Opportunities are available for researchers interested in funded projects, system development, 
+                            applied experimentation, and interdisciplinary deployment-oriented research.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="join-focus-line mt-4">
+                <strong>Preferred research directions:</strong>
+                ITS, SDN, IoV, VANETs, Edge Computing, Blockchain, Internet Routing, BGP, secure networked systems, 
+                and AI-assisted mobility applications.
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLABORATIONS -->
+    <section id="collaborations" class="bg-white compact-section">
+        <div class="container">
+            <h2 class="section-title">Collaborators</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>Dr. Debasis Das</h5>
+                        <p class="small text-muted">VANET Lab, Indian Institute of Technology Jodhpur, India</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>Prof. Sajal K. Das</h5>
+                        <p class="small text-muted">Daniel St. Clair Endowed Chair Professor, Missouri University of Science and Technology, USA</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>Prof. Rajkumar Buyya</h5>
+                        <p class="small text-muted">Cloud Computing and Distributed Systems Laboratory, University of Melbourne, Australia</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>Dr. Ernazar Reypnazarov and Dr. Doston Khasanov</h5>
+                        <p class="small text-muted">Tashkent University of Information Technologies, Uzbekistan</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>Dr. Himani Sikarwar</h5>
+                        <p class="small text-muted">Computer Science and Engineering Department, Shiv Nadar IoE, Greater Noida, India</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="collab-box">
+                        <i class="fas fa-university collab-icon"></i>
+                        <h5>Dr. Lokendra Vishwakarma</h5>
+                        <p class="small text-muted">Computing and Data Sciences, FLAME University, Pune, India</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="bg-light compact-section">
+        <div class="container">
+            <h2 class="section-title">Research Team</h2>
+            <p class="text-muted mb-5">Working with brilliant minds to solve complex network challenges.</p>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <img src="Gowher-Parry.jpg" alt="Mr. Gowher Parry" class="team-photo">
+                        </div>
+                        <h5 class="mb-1">Mr. Gowher Parry</h5>
+                        <p class="text-primary small mb-2">Ph.D. Research Scholar</p>
+                        <p class="small text-muted">IoV and Blockchain</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <img src="shubham-goel.png" alt="Shubham Goel" class="team-photo">
+                        </div>
+                        <h5 class="mb-1">Mr. Shubham Goel</h5>
+                        <p class="text-primary small mb-2">Student Collaborator</p>
+                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <img src="sahil-dhiman.jpg" alt="Sahil Dhiman" class="team-photo">
+                        </div>
+                        <h5 class="mb-1">Mr. Sahil Dhiman</h5>
+                        <p class="text-primary small mb-2">Student Collaborator</p>
+                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <img src="bhavya-jain.png" alt="Bhavya Jain" class="team-photo">
+                        </div>
+                        <h5 class="mb-1">Mr. Bhavya Jain</h5>
+                        <p class="text-primary small mb-2">Student Collaborator</p>
+                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="mb-3">
+                            <img src="aarju-dixit.jpg" alt="Aarju Dixit" class="team-photo">
+                        </div>
+                        <h5 class="mb-1">Ms. Aarju Dixit</h5>
+                        <p class="text-primary small mb-2">Research Collaborator, IIT Jodhpur</p>
+                        <p class="small text-muted">Researching AI-enabled Healthcare</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="Publications" class="bg-white compact-section">
+        <div class="container">
+
+            <div class="publications-header">
+                <div>
+                    <h3 class="mb-1">Selected Publications</h3>
+                    <p class="text-muted mb-0 small">
+                        A selected list of publications in intelligent transportation, SDN, IoV, edge computing, and secure networked systems.
+                    </p>
+                </div>
+
+                <a href="https://scholar.google.com/citations?user=KJfw2-kAAAAJ&hl=en" 
+                   class="btn btn-sm btn-outline-dark">
+                    View Google Scholar <i class="fas fa-external-link-alt ms-1"></i>
+                </a>
+            </div>
+
+            <div class="publications-scroll-panel">
+                <div class="list-group">
+
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1570870526000247" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">qIoV: A Quantum-Driven Internet-of-Vehicles-Based Approach for Environmental Monitoring and Rapid Response Systems</h6>
+                            <small>2026</small>
+                        </div>
+                        <p class="mb-1 text-muted">Ad Hoc Networks</p>
+                        <small>Ankur Nahar, Koustav Kumar Mondal, Debasis Das, Rajkumar Buyya</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/11018478/" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">MRMH: Multi-Constraint Routing Optimization Using Hybrid Metaheuristics in Vehicular Ad-Hoc Networks</h6>
+                            <small>2025</small>
+                        </div>
+                        <p class="mb-1 text-muted">IEEE Transactions on Network Science and Engineering</p>
+                        <small>Ankur Nahar, Himani Sikarwar, Debasis Das, Sudip Misra</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10571385/" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">Clouds on the Road: A Software-Defined Fog Computing Framework for Intelligent Resource Management in Vehicular Ad-Hoc Networks</h6>
+                            <small>2024</small>
+                        </div>
+                        <p class="mb-1 text-muted">IEEE Transactions on Mobile Computing</p>
+                        <small>Ankur Nahar, Koustav Kumar Mondal, Debasis Das, Rajkumar Buyya</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10810742" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">A Hypergraph Approach to Deep Learning Based Routing in Software-Defined Vehicular Networks</h6>
+                            <small>2024</small>
+                        </div>
+                        <p class="mb-1 text-muted">IEEE Transactions on Mobile Computing</p>
+                        <small>Ankur Nahar, Nishit Bhardwaj, Debasis Das, Sajal K Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/11203265" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">DyBatch: Message Prioritization and Priority-driven Dynamic Batch Verification in Large-scale IoV Networks</h6>
+                            <small>2025</small>
+                        </div>
+                        <p class="mb-1 text-muted">IEEE Transactions on Vehicular Technology</p>
+                        <small>Himani Sikarwar, Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1570870525001222" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">Meta-enhanced hierarchical multi-agent reinforcement learning for dynamic spectrum management and trust-based routing in cognitive vehicular networks</h6>
+                            <small>2025</small>
+                        </div>
+                        <p class="mb-1 text-muted">IEEE Transactions on Network Science and Engineering</p>
+                        <small>Ankur Nahar, Debasis Das, Ramnarayan Yadav, Khujamatov Halimjon, Ernazar Reypnazarov</small>
+                    </a>
+
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1570870522001688" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">MetaLearn: Optimizing Routing Heuristics with a Hybrid Meta-Learning Approach in Vehicular Ad-hoc Networks</h6>
+                            <small>2023</small>
+                        </div>
+                        <p class="mb-1 text-muted">Ad Hoc Networks</p>
+                        <small>Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9749014" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">Lbsv: Lightweight Blockchain Security Protocol for Secure Storage and Communication in SDN-enabled IoV</h6>
+                            <small>2022</small>
+                        </div>
+                        <p class="mb-1 text-muted">IEEE Transactions on Vehicular Technology</p>
+                        <small>Lokendra Vishwakarma, Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://link.springer.com/article/10.1007/s11277-023-10726-4" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">SDCast: A Software-Defined Networking Based Clustered Routing Protocol for Vehicular Ad-Hoc Networks</h6>
+                            <small>2023</small>
+                        </div>
+                        <p class="mb-1 text-muted">Wireless Personal Communications</p>
+                        <small>Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10349863" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">Optimizing Stochastic Task Migration in Vehicular Edge Computing</h6>
+                            <small>2023</small>
+                        </div>
+                        <p class="mb-1 text-muted">21st International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks</p>
+                        <small>Ankur Nahar, Debasis Das, Sajal K Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9749014" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">Adaptive Reinforcement Routing in Software Defined Vehicular Networks</h6>
+                            <small>2020</small>
+                        </div>
+                        <p class="mb-1 text-muted">2020 International Wireless Communications and Mobile Computing</p>
+                        <small>Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9142786" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">CSBR: A Cosine Similarity Based Selective Broadcast Routing Protocol for Vehicular Ad-Hoc Networks</h6>
+                            <small>2020</small>
+                        </div>
+                        <p class="mb-1 text-muted">2020 IFIP Networking Conference</p>
+                        <small>Ankur Nahar, Himani Sikarwar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9306690" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">SeScR: SDN-Enabled Spectral Clustering-Based Optimized Routing Using Deep Learning in VANET Environment</h6>
+                            <small>2020</small>
+                        </div>
+                        <p class="mb-1 text-muted">2020 IEEE 19th International Symposium on Network Computing and Applications</p>
+                        <small>Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9129180" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">LABVS: Lightweight Authentication and Batch Verification Scheme for Universal Internet of Vehicles</h6>
+                            <small>2020</small>
+                        </div>
+                        <p class="mb-1 text-muted">2020 IEEE 91st Vehicular Technology Conference</p>
+                        <small>Himani Sikarwar, Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3416010.3423218" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">OBQR: Orientation-Based Source QoS Routing in VANETs</h6>
+                            <small>2020</small>
+                        </div>
+                        <p class="mb-1 text-muted">Proceedings of the 23rd International ACM Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</p>
+                        <small>Ankur Nahar, Debasis Das, Sajal K Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9860386" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">MetoidS: Hybrid K-Medoids-Meta Heuristic Clustering-Based Routing Optimization in Vehicular Ad-Hoc Networks</h6>
+                            <small>2022</small>
+                        </div>
+                        <p class="mb-1 text-muted">2022 IEEE 95th Vehicular Technology Conference</p>
+                        <small>Ankur Nahar, Lokendra Vishwakarma, Debasis Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10570523" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">RF-CVN: Recurrent Reinforcement Learning Framework for Cognitive Vehicular Ad-Hoc Networks Routing</h6>
+                            <small>2024</small>
+                        </div>
+                        <p class="mb-1 text-muted">2024 IEEE Wireless Communications and Networking Conference</p>
+                        <small>Ankur Nahar, Debasis Das, Ramnarayan Yadav, Khalim Khujamatov, Ernazar Reypnazarov</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10171470" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">CacheIn: A Secure Distributed Multi-layer Mobility-Assisted Edge Intelligence Based Caching for Internet of Vehicles</h6>
+                            <small>2023</small>
+                        </div>
+                        <p class="mb-1 text-muted">2023 IEEE/ACM 23rd International Symposium on Cluster, Cloud and Internet Computing</p>
+                        <small>Ankur Nahar, Himani Sikarwar, Sanyam Jain, Debasis Das</small>
+                    </a>
+
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3571306.3571410" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">SpTFrame: A Framework for Spatio-Temporal Information Aware Message Dissemination in Software Defined Vehicular Networks</h6>
+                            <small>2023</small>
+                        </div>
+                        <p class="mb-1 text-muted">Proceedings of the 24th International Conference on Distributed Computing and Networking</p>
+                        <small>Ankur Nahar, Debasis Das, Sajal K Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9824872/" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">LAAS: Lightweight Anonymous Authentication Scheme for Universal Internet of Vehicles</h6>
+                            <small>2022</small>
+                        </div>
+                        <p class="mb-1 text-muted">2022 International Wireless Communications and Mobile Computing</p>
+                        <small>Himani Sikarwar, Ankur Nahar, Debasis Das</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10572061" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">Design and Implementation of an Active Safety System for Vehicular Ad-Hoc Networks</h6>
+                            <small>2024</small>
+                        </div>
+                        <p class="mb-1 text-muted">2024 International Conference on Information Networking</p>
+                        <small>Halimjon Hujamatov, Debasis Das, Amir Lazarev, Ernazar Reypnazarov, Doston Khasaniv, Ankur Nahar</small>
+                    </a>
+
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9843737" class="list-group-item list-group-item-action p-4 border-0 shadow-sm mb-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">AlcFier: Adaptive Self-Learning Classifier for Routing in Vehicular Ad-Hoc Network</h6>
+                            <small>2022</small>
+                        </div>
+                        <p class="mb-1 text-muted">2022 IEEE 47th Conference on Local Computer Networks</p>
+                        <small>Ankur Nahar, Himani Sikarwar, Debasis Das</small>
+                    </a>
+
+                </div>
             </div>
         </div>
     </section>
