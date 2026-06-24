@@ -282,6 +282,130 @@
   				transition: transform 0.2s ease;
 					}
 
+		/* --- LATEST NEWS SLIDER --- */
+.news-carousel {
+    position: relative;
+    padding: 0 58px 48px;
+}
+
+.news-slide-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.news-card {
+    width: 100%;
+    max-width: 820px;
+    min-height: 245px;
+    background: var(--white);
+    border: 1px solid #e8ecf3;
+    border-left: 5px solid var(--accent);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 16px 35px rgba(10, 26, 47, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 45px rgba(10, 26, 47, 0.13);
+}
+
+.news-card-grant {
+    border-left-color: #28a745;
+}
+
+.news-card-health {
+    border-left-color: #6f42c1;
+}
+
+.news-card-publication {
+    border-left-color: #ffc107;
+}
+
+.news-card-conference {
+    border-left-color: var(--accent);
+}
+
+.news-card-research {
+    border-left-color: #20c997;
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+}
+
+.news-year {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.4px;
+}
+
+.news-card h5 {
+    color: var(--bg-dark);
+    line-height: 1.35;
+    margin-bottom: 0.85rem;
+}
+
+.news-card p {
+    color: #5d667a;
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+.news-control {
+    width: 42px;
+    height: 42px;
+    top: 42%;
+    transform: translateY(-50%);
+    background: var(--bg-dark);
+    border-radius: 50%;
+    opacity: 0.95;
+}
+
+.news-control:hover {
+    background: var(--accent);
+    opacity: 1;
+}
+
+.news-control .carousel-control-prev-icon,
+.news-control .carousel-control-next-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.news-indicators {
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+.news-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .news-carousel {
+        padding: 0 0 48px;
+    }
+
+    .news-card {
+        padding: 1.4rem;
+        min-height: auto;
+    }
+
+    .news-control {
+        display: none;
+    }
+}
+		
         /* --- FOOTER --- */
         footer {
             background: #020c1b;
@@ -300,6 +424,7 @@
 	  padding-top: 35px !important;
 	  padding-bottom: 35px !important;
 	}
+		
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
@@ -638,48 +763,134 @@
         </div>
     </section>
 
-    <section id="news" class="bg-white compact-section" style="padding: 60px 0;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="d-flex align-items-center mb-4">
-                        <h2 class="section-title mb-0 me-4" style="font-size: 1.8rem;">Latest News</h2>
-                        <div class="flex-grow-1 border-bottom"></div>
-                    </div>
+    <section id="news" class="bg-white compact-section news-section" style="padding: 60px 0;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="d-flex align-items-center mb-4">
+                    <h2 class="section-title mb-0 me-4" style="font-size: 1.8rem;">Latest News</h2>
+                    <div class="flex-grow-1 border-bottom"></div>
+                </div>
+
+                <div id="latestNewsCarousel" class="carousel slide news-carousel" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="hover">
                     
-                    <div class="row">
-						 <div class="col-md-4 mb-3">
-                            <div class="p-3 border rounded h-100 shadow-sm" style="border-left: 4px solid #ffc107 !important;">
-                                <span class="badge bg-warning text-dark mb-2">Paper Publication</span>
-                                <small class="text-muted d-block mb-1">2026</small>
-                                <h6 class="mb-1">Paper Publication</h6>
-                                <p class="small text-muted mb-0">Our collaborative work with Dr. Debasis Das (IIT Jodhpur) and Prof. Rajkumar Buyya (University of Melbourne), “qIoV: A quantum-driven approach for environmental monitoring and rapid response systems using internet of vehicles,” has been accepted in Ad Hoc Nettworks Journal.</p>
-                            </div>
-						 </div>
-							 
-                        <div class="col-md-4 mb-3">
-                            <div class="p-3 border rounded h-100 shadow-sm" style="border-left: 4px solid var(--accent) !important;">
-                                <span class="badge bg-primary mb-2">Paper Publication</span>
-                                <small class="text-muted d-block mb-1">2025</small>
-                                <h6 class="mb-1">Paper accepted at 11th International Conference on Pattern Recognition and Machine Intelligence (PReMI 2025</h6>
-                                <p class="small text-muted mb-0">Our paper, “AI at the Chalkface: A Multi-Agent RAG Assistant for Active Learning in STEM,” has been accepted for presentation at PReMI 2025. This work was a collaborative effort with Dr. Rucha Joshi and Ms. Suhani Shrivastava, Ms. Nikita Thomas, and Mr. Malhar Arora from Plaksha University.</p>
+                    <div class="carousel-indicators news-indicators">
+                        <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <div class="news-slide-wrapper">
+                                <article class="news-card news-card-grant">
+                                    <div class="news-meta">
+                                        <span class="badge bg-success">Grant Award</span>
+                                        <span class="news-year">2026</span>
+                                    </div>
+                                    <h5>ANRF PM-ECRG Grant Awarded for TRIVENI-ITS</h5>
+                                    <p>
+                                        Dr. Ankur Nahar has been awarded the ANRF Prime Minister Early Career Research Grant 
+                                        PM-ECRG of ₹65 lakhs for the project 
+                                        “TRIVENI-ITS: Traffic-Responsive Infrastructure for Visually-Impaired Enablement at Intersections.” 
+                                        The project focuses on safer, inclusive, and intelligent intersection-level mobility support 
+                                        for visually impaired pedestrians.
+                                    </p>
+                                </article>
                             </div>
                         </div>
 
-                        <div class="col-md-4 mb-3">
-                            <div class="p-3 border rounded h-100 shadow-sm" style="border-left: 4px solid #28a745 !important;">
-                                <span class="badge bg-success mb-2">Research</span>
-                                <small class="text-muted d-block mb-1">2025</small>
-                                <h6 class="mb-1">Research Collaboration</h6>
-                                <p class="small text-muted mb-0">Our students, Mr. Shubham Goel, Mr. Sahil Dhiman, and Mr. Bhavya Jain, visited the VANET Lab, IIT Jodhpur to work on a research collaboration on AI in healthcare.</p>
+                        <div class="carousel-item">
+                            <div class="news-slide-wrapper">
+                                <article class="news-card news-card-health">
+                                    <div class="news-meta">
+                                        <span class="badge" style="background-color: #6f42c1;">Paper Publication</span>
+                                        <span class="news-year">2026</span>
+                                    </div>
+                                    <h5>FedBio-AD Paper Published in Collaboration with IIT Jodhpur</h5>
+                                    <p>
+                                        Our paper, “FedBio-AD: Federated Learning Enabled Digital Biomarker Framework for Early 
+                                        Alzheimer’s Disease Detection,” has been published in collaboration with IIT Jodhpur, 
+                                        Ms. Aarju Dixit, and Dr. Debasis Das. The work advances privacy-preserving digital biomarker 
+                                        learning for early Alzheimer’s disease detection.
+                                    </p>
+                                </article>
                             </div>
                         </div>
+
+                        <div class="carousel-item">
+                            <div class="news-slide-wrapper">
+                                <article class="news-card news-card-publication">
+                                    <div class="news-meta">
+                                        <span class="badge bg-warning text-dark">Paper Publication</span>
+                                        <span class="news-year">2026</span>
+                                    </div>
+                                    <h5>qIoV Paper Accepted in <em>Ad Hoc Networks</em></h5>
+                                    <p>
+                                        Our collaborative work with Dr. Debasis Das from IIT Jodhpur and Prof. Rajkumar Buyya 
+                                        from the University of Melbourne, “qIoV: A Quantum-Driven Approach for Environmental 
+                                        Monitoring and Rapid Response Systems Using Internet of Vehicles,” has been accepted 
+                                        in the <em>Ad Hoc Networks</em> journal.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="news-slide-wrapper">
+                                <article class="news-card news-card-conference">
+                                    <div class="news-meta">
+                                        <span class="badge bg-primary">Paper Publication</span>
+                                        <span class="news-year">2025</span>
+                                    </div>
+                                    <h5>Paper Accepted at PReMI 2025</h5>
+                                    <p>
+                                        Our paper, “AI at the Chalkface: A Multi-Agent RAG Assistant for Active Learning in STEM,” 
+                                        has been accepted for presentation at the 11th International Conference on Pattern Recognition 
+                                        and Machine Intelligence, PReMI 2025. This work was a collaborative effort with Dr. Rucha Joshi, 
+                                        Ms. Suhani Shrivastava, Ms. Nikita Thomas, and Mr. Malhar Arora from Plaksha University.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="news-slide-wrapper">
+                                <article class="news-card news-card-research">
+                                    <div class="news-meta">
+                                        <span class="badge bg-success">Research</span>
+                                        <span class="news-year">2025</span>
+                                    </div>
+                                    <h5>Research Collaboration with VANET Lab, IIT Jodhpur</h5>
+                                    <p>
+                                        Our students, Mr. Shubham Goel, Mr. Sahil Dhiman, and Mr. Bhavya Jain, visited the VANET Lab 
+                                        at IIT Jodhpur to work on a research collaboration focused on AI-enabled healthcare systems.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+
                     </div>
+
+                    <button class="carousel-control-prev news-control" type="button" data-bs-target="#latestNewsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next news-control" type="button" data-bs-target="#latestNewsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
+	
    <section id="Publications" class="bg-light compact-section">
         <div class="container">
             <h3 class="mb-4">Selected Publications</h3>
