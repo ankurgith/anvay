@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- DESIGN STYLE & COLOR SCHEME --- */
         :root {
             --bg-dark: #0A1A2F;
             --bg-secondary: #112240;
@@ -330,7 +329,7 @@
             padding-bottom: 35px !important;
         }
 
-        /* --- ABOUT --- */
+        /* --- ABOUT / GROUP LEAD WITH CV PREVIEW --- */
         .profile-img {
             width: 100%;
             max-width: 250px;
@@ -342,6 +341,118 @@
         .profile-img:hover {
             transform: translate(-5px, -5px);
             box-shadow: 20px 20px 0px var(--accent);
+        }
+
+        .about-lead-card {
+            background: var(--white);
+            border: 1px solid #e6ebf2;
+            border-radius: 18px;
+            padding: 1.4rem;
+            box-shadow: 0 18px 40px rgba(10, 26, 47, 0.08);
+        }
+
+        .about-profile-box {
+            text-align: center;
+        }
+
+        .about-profile-box .profile-img {
+            max-width: 230px;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .resume-preview-box {
+            margin-top: 1.4rem;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #dce3ef;
+            background: #f8f9fa;
+        }
+
+        .resume-preview-header {
+            background: var(--bg-dark);
+            color: var(--white);
+            padding: 0.7rem 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .resume-preview-header i {
+            color: var(--accent);
+        }
+
+        .resume-frame {
+            width: 100%;
+            height: 315px;
+            border: none;
+            display: block;
+        }
+
+        .about-bio-panel {
+            max-height: 555px;
+            overflow-y: auto;
+            padding-right: 12px;
+        }
+
+        .about-bio-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .about-bio-panel::-webkit-scrollbar-track {
+            background: #e9eef6;
+            border-radius: 10px;
+        }
+
+        .about-bio-panel::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        .about-bio-panel {
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) #e9eef6;
+        }
+
+        .about-bio-panel p {
+            color: #4b5568;
+            line-height: 1.72;
+            margin-bottom: 1rem;
+        }
+
+        .about-highlight-line {
+            background: rgba(33, 105, 243, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            margin-top: 1rem;
+            color: #4b5568;
+            line-height: 1.6;
+        }
+
+        .about-highlight-line strong {
+            color: var(--bg-dark);
+        }
+
+        @media (max-width: 991px) {
+            .about-bio-panel {
+                max-height: none;
+                overflow-y: visible;
+                padding-right: 0;
+                margin-top: 2rem;
+            }
+
+            .resume-frame {
+                height: 280px;
+            }
         }
 
         /* --- CARDS --- */
@@ -466,6 +577,10 @@
 
         .news-card-grant {
             border-left-color: #28a745;
+        }
+
+        .news-card-opening {
+            border-left-color: #fd7e14;
         }
 
         .news-card-health {
@@ -876,37 +991,110 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="bg-white compact-section">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-start g-4">
 
-                <div class="col-lg-5 text-center">
-                    <img src="./ProfilePhoto.jpg" alt="Dr. Ankur Nahar" class="profile-img">
+                <div class="col-lg-4">
+                    <div class="about-lead-card about-profile-box">
+                        <img src="./ProfilePhoto.jpg" alt="Dr. Ankur Nahar" class="profile-img">
+
+                        <h4 class="mb-1">Dr. Ankur Nahar</h4>
+                        <p class="text-primary small mb-2">
+                            Assistant Professor, Plaksha University
+                        </p>
+                        <p class="small text-muted mb-3">
+                            Ph.D., Indian Institute of Technology Jodhpur
+                        </p>
+
+                        <div class="about-action-buttons">
+                            <a href="https://drive.google.com/file/d/1JI1vj47wN1QMxrg83Ztaqj_PVMAEPysA/view?usp=sharing" 
+                               target="_blank" 
+                               class="btn btn-sm btn-primary rounded-pill px-3"
+                               style="background-color: var(--accent); border: none;">
+                                View CV
+                            </a>
+
+                            <a href="https://scholar.google.com/citations?user=KJfw2-kAAAAJ&hl=en" 
+                               target="_blank" 
+                               class="btn btn-sm btn-outline-dark rounded-pill px-3">
+                                Google Scholar
+                            </a>
+
+                            <a href="mailto:ankur.nahar@plaksha.edu.in" 
+                               class="btn btn-sm btn-outline-dark rounded-pill px-3">
+                                Email
+                            </a>
+                        </div>
+
+                        <div class="resume-preview-box">
+                            <div class="resume-preview-header">
+                                <span><i class="fas fa-file-pdf me-2"></i>Curriculum Vitae</span>
+                                <span class="small">Preview</span>
+                            </div>
+
+                            <iframe 
+                                class="resume-frame"
+                                src="https://drive.google.com/file/d/1JI1vj47wN1QMxrg83Ztaqj_PVMAEPysA/preview"
+                                allow="autoplay">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-lg-7">
+                <div class="col-lg-8">
                     <h2 class="section-title">Group Lead</h2>
 
-                    <p class="lead text-secondary">
-                        Dr. Ankur Nahar <br>
-                        Assistant Professor at Plaksha University | Ph.D. from IIT Jodhpur
-                    </p>
+                    <div class="about-bio-panel mt-4">
+                        <p class="lead text-secondary">
+                            Dr. Ankur Nahar is an Assistant Professor at Plaksha University, Mohali, with research interests in 
+                            Intelligent Transportation Systems, Software-Defined Networking, Internet of Vehicles, edge computing, 
+                            blockchain-enabled trust, and secure networked systems.
+                        </p>
 
-                    <p>
-                        Dr. Ankur is currently serving as an Assistant Professor at Plaksha University, Mohali. 
-                        He earned his Ph.D. from Indian Institute of Technology Jodhpur, where he was mentored by 
-                        Dr. Debasis Das from IIT Jodhpur and Prof. Sajal K. Das from Missouri University of Science 
-                        and Technology, USA.
-                    </p>
+                        <p>
+                            Dr. Nahar earned his Ph.D. from the Indian Institute of Technology Jodhpur, where he was mentored by 
+                            Dr. Debasis Das from IIT Jodhpur and Prof. Sajal K. Das from Missouri University of Science and Technology, USA. 
+                            His research focuses on the design and optimization of scalable, secure, and intelligent network architectures 
+                            spanning Software-Defined Networking, 5G/6G core systems, and Internet routing, including BGP. He aims to develop 
+                            adaptive control-plane mechanisms, efficient resource allocation mechanisms, congestion-aware routing strategies, 
+                            and low-latency data delivery frameworks for heterogeneous and dynamic network environments.
+                        </p>
 
-                    <p>
-                        Dr. Ankur's primary research focuses on the design and optimization of scalable, secure, 
-                        and programmable networked systems for Intelligent Transportation Systems, Software-Defined 
-                        Networking, Internet of Vehicles, and edge-enabled mobility infrastructures. His work investigates 
-                        adaptive control-plane mechanisms, routing optimization, resource allocation, congestion avoidance, 
-                        and low-latency communication in heterogeneous networks. He also explores blockchain-enabled trust 
-                        mechanisms and applied AI-driven systems in interdisciplinary domains.
-                    </p>
+                        <p>
+                            His broader research objective is to advance programmable, resilient, and self-healing network infrastructures 
+                            by integrating edge/fog computing, network intelligence, and trust-aware mechanisms for real-time applications. 
+                            His work addresses critical challenges in vehicular ad-hoc networks, vehicular cloud computing, Internet of Vehicles, 
+                            and the application of software-defined networking in intelligent transportation systems.
+                        </p>
+
+                        <p>
+                            His professional experience includes teaching as an Assistant Professor at reputed academic institutions and 
+                            working as a Network Engineer, where he contributed to student development, academic programs, and network 
+                            management. His research achievements are reflected through publications in reputed journals and conferences, 
+                            along with recognition and support from prestigious organizations including the Department of Science & Technology, 
+                            India, ACM India, and several international academic forums.
+                        </p>
+
+                        <p>
+                            One of his notable recognitions is his selection as a BRICS Young Scientist in 2023, where he represented the 
+                            Indian delegation at the 8th BRICS Young Scientist Forum in South Africa. He has also engaged in international 
+                            research collaborations and academic visits to institutions such as the University of Melbourne, Australia, 
+                            Tashkent University of Information Technologies, Uzbekistan, and IIT Kharagpur.
+                        </p>
+
+                        <p>
+                            In addition to research and teaching, Dr. Nahar has contributed to academic leadership and professional service, 
+                            including serving as Secretary of the ACM Student Chapter at IIT Jodhpur. He has actively participated in 
+                            international symposiums and research forums, where his work has been presented on global platforms.
+                        </p>
+
+                        <div class="about-highlight-line">
+                            <strong>Research Vision:</strong>
+                            To build intelligent, programmable, secure, and inclusive networked infrastructures for next-generation mobility, 
+                            smart transportation, edge-enabled systems, and trustworthy cyber-physical applications.
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -1081,6 +1269,7 @@
                             <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
                             <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#latestNewsCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
                         </div>
 
                         <div class="carousel-inner">
@@ -1099,6 +1288,25 @@
                                             “TRIVENI-ITS: Traffic-Responsive Infrastructure for Visually-Impaired Enablement at Intersections.” 
                                             The project focuses on safer, inclusive, and intelligent intersection-level mobility support 
                                             for visually impaired pedestrians.
+                                        </p>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="news-slide-wrapper">
+                                    <article class="news-card news-card-opening">
+                                        <div class="news-meta">
+                                            <span class="badge bg-warning text-dark">Project Opening</span>
+                                            <span class="news-year">2026</span>
+                                        </div>
+                                        <h5>Project Associate Opening for ANRF-Funded TRIVENI-ITS Project</h5>
+                                        <p>
+                                            ANVAY Lab is inviting applications for a Project Associate position under the ANRF-funded project 
+                                            “TRIVENI-ITS: Traffic-Responsive Infrastructure for Visually-Impaired Enablement at Intersections.” 
+                                            The position is suitable for candidates interested in Intelligent Transportation Systems, 
+                                            Software-Defined Networking, edge-enabled mobility systems, computer vision, and assistive 
+                                            technologies for inclusive smart-city infrastructure.
                                         </p>
                                     </article>
                                 </div>
@@ -1247,7 +1455,7 @@
                         <div class="join-icon">
                             <i class="fas fa-microscope"></i>
                         </div>
-                        <h5>Research Fellows</h5>
+                        <h5>Research Fellows / Project Staff</h5>
                         <p>
                             Opportunities are available for researchers interested in funded projects, system development, 
                             applied experimentation, and interdisciplinary deployment-oriented research.
