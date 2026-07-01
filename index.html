@@ -749,6 +749,26 @@
             color: var(--bg-dark);
         }
 
+        .join-card {
+    color: inherit;
+}
+
+.join-card:hover {
+    text-decoration: none;
+}
+
+.join-apply-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.join-card:hover .join-apply-link {
+    color: var(--bg-dark);
+}
+
         /* --- COLLABORATION GRID --- */
         .collab-box {
             background: var(--white);
@@ -1454,7 +1474,7 @@
                         <div class="join-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h5>Research Interns</h5>
+                        <h5>Research Interns/Research Fellows</h5>
                         <p>
                             Open for undergraduate and postgraduate students who want to gain hands-on research experience 
                             through simulations, prototyping, experimentation, and publication-oriented work.
@@ -1462,20 +1482,28 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="join-card h-100">
-                        <div class="join-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <h5>Research Fellows / Project Staff</h5>
-                        <p>
-                            Opportunities are available for researchers interested in funded projects, system development, 
-                            applied experimentation, and interdisciplinary deployment-oriented research.
-                        </p>
-                    </div>
-                </div>
+               <div class="col-md-4">
+    <a href="https://plaksha.uknowva.com/job-portal/"
+       target="_blank"
+       class="join-card h-100 text-decoration-none d-block">
 
-            </div>
+        <div class="join-icon">
+            <i class="fas fa-microscope"></i>
+        </div>
+
+        <h5>Project Associate I</h5>
+
+        <p>
+            Opportunities are available for researchers interested in funded projects, system development, 
+            applied experimentation, and interdisciplinary deployment-oriented research.
+        </p>
+
+        <span class="join-apply-link">
+            Apply via Plaksha Job Portal <i class="fas fa-arrow-right ms-1"></i>
+        </span>
+
+    </a>
+</div>
 
             <div class="join-focus-line mt-4">
                 <strong>Preferred research directions:</strong>
